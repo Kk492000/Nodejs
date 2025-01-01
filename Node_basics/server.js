@@ -1,9 +1,3 @@
-//core modules - 1)http- launch a server, send requests
-// 2)https
-// 3)fs
-// 4)path
-// 5)os
-
 const http = require("http");
 const fs = require("fs");
 
@@ -47,4 +41,7 @@ const server = http.createServer((req, res) => {
   res.end();
 });
 
-server.listen(3000);
+const PORT = 8000;
+server.listen(PORT, () => {
+  console.log(`App is running at ${PORT}`);
+});
