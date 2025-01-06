@@ -3,14 +3,10 @@ const path = require("path");
 const express = require("express");
 
 const rootDir = require("../util/path");
-
-console.log(require.main.filename, "require.main.filename");
+const adminData = require("./admin");
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  console.log(require.main.filename, "fsdfa");
-  res.render("shop");
-});
+router.get("/");
 
 module.exports = router;
