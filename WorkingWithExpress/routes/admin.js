@@ -5,7 +5,6 @@ const router = express.Router();
 
 const productController = require("../controllers/products");
 
-const products = [];
 
 router.get("/add-product", productController.getAddProduct);
 
