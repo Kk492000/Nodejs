@@ -9,7 +9,7 @@ exports.getAddProduct = (req, res, next) => {
     activeAddProduct: true,
   });
 };
-
+  
 exports.postAddProduct = (req, res, next) => {
   products.push({ title: req.body.title });
   res.redirect("/");
