@@ -9,6 +9,7 @@ const path = require("path");
 app.use(express.urlencoded({ extended: false }));
 app.use("/admin", adminRoutes);
 app.use(shopRoutes);
+const sequilize = require("./util/database");
 
 app.set("view engine", "pug");
 app.set("views", "views");
@@ -20,6 +21,15 @@ app.use(express.static(path.join(__dirname, "public ")));
 app.use((req, res, next) => {
   res.send(404).sendFile(path.join(__dirname, "views", "404.html"));
 });
+
+sequilize
+  .sync()
+  .then((result) => {
+    console.log(result);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 app.listen(PORT, () => {
   console.log(`server is started at http://localhost:${PORT}`);

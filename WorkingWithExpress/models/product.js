@@ -13,7 +13,11 @@ const Product = sequilize.define("product", {
     allowNull: false,
   },
   price: {
-    type: DataTypes.INTEGER,
+    type: DataTypes.DOUBLE,
+    allowNull: false,
+  },
+  imageUrl: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
   description: {
