@@ -8,7 +8,7 @@ const Product = sequilize.define("product", {
     allowNull: false,
     primaryKey: true,
   },
-  name: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -21,8 +21,8 @@ const Product = sequilize.define("product", {
     allowNull: false,
   },
   description: {
-    type: DataTypes.TEXT,
-    allowNull: true,
+    type: DataTypes.STRING,
+    allowNull: false,
   },
 });
 
