@@ -26,11 +26,8 @@ sequilize
   .sync()
   .then((result) => {
     console.log(result);
+    app.listen(3000);
   })
   .catch((err) => {
     console.log(err);
   });
-
-app.listen(PORT, () => {
-  console.log(`server is started at http://localhost:${PORT}`);
-});
